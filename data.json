@@ -1,0 +1,30 @@
+[
+	{
+	"name": "JavaScript Tutorial",
+	"url": "https://www.w3schools.com/js/default.asp"
+	},
+	{
+	"name": "HTML Tutorial",
+	"url": "https://www.w3schools.com/html/default.asp",
+	"submenu" : [
+			{
+				"name": "React Tutorial",
+				"url": "https://www.w3schools.com/angular/default.asp"
+			},
+			{
+				"name": "Java Tutorial",
+				"url": "https://www.w3schools.com/angular/default.asp"
+			}
+		]
+	},
+	{
+	"name": "CSS Tutorial",
+	"url": "https://www.w3schools.com/css/default.asp",
+	"submenu" : [
+			{
+				"name": "Angular Tutorial",
+				"url": "https://www.w3schools.com/angular/default.asp"
+			}
+		]
+	}
+]

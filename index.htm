@@ -1,0 +1,43 @@
+<DOCTYPE html>
+<html>
+	<head>
+	<title>JSON Practise</title>
+	<style>
+
+	</style>
+	</head>
+	<body>
+		<nav id="nav"></nav>
+	</body>
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+		var url = "data.json";
+
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var myArr = JSON.parse(this.responseText);
+				myFunction(myArr);
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
+		function myFunction(arr) {
+			var content = "<ul>";
+			for(var i = 0; i < arr.length; i++) {
+				content += '<li>'+
+					'<a href="'+arr[i].url+'">'+arr[i].name+'</a>'
+					if(arr[i].submenu != undefined){
+						content += '<ul>';
+						for(var j = 0; j < arr[i].submenu.length; j++) {
+							content += '<li><a href="'+arr[i].submenu[j].url+'">'+arr[i].submenu[j].name+'</a></li>';
+						}
+						content += '</ul>';
+					}
+				content += '</li>';
+			}
+			content += '</ul>' 
+			document.getElementById("nav").innerHTML = content;
+		}
+	</script>
+</html>
